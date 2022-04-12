@@ -1,27 +1,44 @@
 // Step One - get -controller accept requrests
 function getMessage() {
     let msg = document.getElementById("message").value;
-    displayMessage(msg);
+
+    if (msg == '') {
+        alert('You must enter a message!');
+    } else {
+        msg = msg.toLowerCase();
+
+        let revMsg = reverseMessageB(msg);
+        displayMessage(revMsg);
+    }
+
 }
 
-// final step - display those values
+function reverseMessageA(msg) {
+
+    let revMessage = '';
+
+    // decrimenting loop
+    for (let index = msg.length - 1; index >= 0; index--) {
+
+        let char = msg[index];
+        revMessage += char;
+
+    }
+
+    return revMessage;
+}
+
+function reverseMessageB(msg) {
+
+    let revMessage = '';
+    revMessage = msg.split("").reverse("").join("");
+
+    return revMessage
+}
+
 function displayMessage(message) {
-    // <li class="list-group-item">A List Item</li>
 
-    // let item = `<li class="list-group-item">${message}</li>`;
-
-    // Frist get the ol element from the page
     element = document.getElementById("results");
-
-    // Next create a new li element
-    let item = document.createElement("li");
-    // add classes to the li element
-    item.classList.add("list-group-item");
-    // set the message for the li element
-    item.innerHTML = message;
-
-    // add the new item to the list
-    element.appendChild(item);
-
+    element.innerHTML = message;
 
 }
