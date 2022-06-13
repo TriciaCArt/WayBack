@@ -16,11 +16,11 @@
     <!-- Dev Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
 
-    <link rel="stylesheet" href="/css/styleez.css">
-    <link rel="stylesheet" href="/css/prism.css">
+    <link rel="stylesheet" href="css/styleez.css">
+    <link rel="stylesheet" href="css/prism.css">
 
     <!-- favicon -->
-    <link rel="icon" type="image/png" href="/img/favicon-32x32.png">
+    <link rel="icon" type="image/png" href="img/favicon-32x32.png">
 
 </head>
 
@@ -28,9 +28,9 @@
 
     <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
         <div class="container-fluid">
-            <a class="navbar-brand" href="/index.html">
-                <img src="/img/wayBackBlack.png" class="d-inline-block align-text-center me-1" height="100" alt="">
-                APP NAME!!!!</a>
+            <a class="navbar-brand" href="index.html">
+                <img src="img/wayBackBlack.png" class="d-inline-block align-text-center me-1" height="50" alt="">
+                Way Back</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
                 aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -38,20 +38,18 @@
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <ul class="navbar-nav me-auto mb-2 mb-md-0">
                     <li class="nav-item">
-                        <a class="nav-link" href="/index.html">Home</a>
+                        <a class="nav-link" href="index.html">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/app.html">The App</a>
+                        <a class="nav-link" href="app.html">The App</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="/code.html">The Code</a>
+                        <a class="nav-link active" aria-current="page" href="code.html">The Code</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">The Repo</a>
+                        <a class="nav-link" href="https://github.com/TriciaCArt/WayBack">The Repo</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">The Repo</a>
-                    </li>
+
                 </ul>
             </div>
         </div>
@@ -64,37 +62,50 @@
                 <div class="col-12 col-lg-8">
                     <pre class="line-numbers">
                         <code class="language-javascript">
-// Step One - get -controller accept requrests
 function getMessage() {
 let msg = document.getElementById("message").value;
-displayMessage(msg);
-}
 
-// final step - display those values
-function displayMessage(message) {
-// First get the ol element from the page
-element = document.getElementById("results");
+if (msg == '') {alert('You must enter a message!');} 
+else {msg = msg.toLowerCase();
 
-// Next create a new li element
-let item = document.createElement("li");
-// add classes to the li element
-item.classList.add("list-group-item");
-// set the message for the li element
-item.innerHTML = message;
+let revMsg = reverseMessageB(msg);
+displayMessage(revMsg);}}
 
-// add the new item to the list
-element.appendChild(item);
-}
+function reverseMessageA(msg) {let revMessage = '';
+
+// decrimenting loop
+for (let index = msg.length - 1; index >= 0; index--) 
+{let char = msg[index];
+revMessage += char;}
+
+return revMessage;}
+
+function reverseMessageB(msg) 
+{let revMessage = '';
+revMessage = msg.split("").reverse("").join("");
+
+return revMessage}
+
+function displayMessage(message) 
+{element = document.getElementById("results");
+element.innerHTML = message;}
+
                         </code>
                     </pre>
 
                 </div>
                 <div class="col-12 col-lg-4">
-                    <p>The code is structured in two functions.</p>
+                    <p>The code to be able to reverse a string is fairly straightforward. I needed to get
+                        the word or phrase from the user, reverse it, then display it.
+                    </p>
                     <h5>getMessage</h5>
-                    <p>Gets value from the user</p>
+                    <p>Gets value from the user, checks if entry is valid, and converts the entry into lower case.</p>
+                    <h5>Reverse Message</h5>
+                    <p>Using a for loop, we went through each character, split, reversed, then joined it.</p>
                     <h5>Display Message</h5>
-                    <p>Displays the Items on the page.</p>
+                    <p>All we need to do now is display the results of the reversal. This project was my introduction
+                        to encapsulation, a concept I continued to utilize as I continued down the road of code.
+                    </p>
 
                 </div>
             </div>
@@ -104,22 +115,24 @@ element.appendChild(item);
         <div class="container-fluid">
             <div class="row row-cols-1 row-cols-lg-3 gy-2">
                 <div class="col order-last order-lg-first d-flex align-items-center justify-content-start">
-                    <span class="sizeMe">&copy2022;</span>
-                    <span class="sizeMe"> Tricia Chitwood | illiannamama@gmail.com</span>
+                    <span class="sizeMe">&copy2022</span>
+                    <span class="sizeMe"> Tricia Chitwood | TChitwoodCoding@gmail.com</span>
                 </div>
                 <div class="col d-flex aling-items-center justify-content-center justify-content-lg-center">
-                    <img src="/img/tcwhiteLogo600.png" height="100" alt="">
+                    <a href="https://triciachitwoodcoding.netlify.app/"><img src="img/tcwhiteLogo600.png" height="50"
+                            alt=""></a>
                 </div>
                 <div class="col d-flex align-items-center justify-content-center justify-content-lg-end">
                     <div class="row">
                         <div class="col socialIcons">
-                            <a href="#"><i class="bi bi-linkedin"></i></a>
+                            <a href="https://www.linkedin.com/in/tricia-chitwood-art/"><i
+                                    class="bi bi-linkedin"></i></a>
                         </div>
                         <div class="col socialIcons">
-                            <a href="#"><i class="bi bi-github"></i></a>
+                            <a href="https://github.com/TriciaCArt/WayBack"><i class="bi bi-github"></i></a>
                         </div>
                         <div class="col socialIcons">
-                            <a href="#"><i class="bi bi-twitter"></i></a>
+                            <a href="https://twitter.com/TriciaChitArt"><i class="bi bi-twitter"></i></a>
                         </div>
                     </div>
                 </div>
@@ -130,7 +143,7 @@ element.appendChild(item);
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous">
     </script>
-    <script src="/js/prism.js"></script>
+    <script src="js/prism.js"></script>
     <script>
         Prism.plugins.NormalizeWhitespace.setDefaults({
             'remove-trailing': true,
